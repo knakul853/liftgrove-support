@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Free training max calculator for barbell lifting. Estimate your one-rep max from a recent set, choose 85% or 90%, and round to a load you can use. Liftgrove is free on iPhone and iPad.">
+  <meta name="apple-itunes-app" content="app-id=6821814920">
+  <meta property="og:title" content="Free Training Max Calculator · Liftgrove">
+  <meta property="og:description" content="Turn a recent barbell set into a starting training max, rounded to your loading increment.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://knakul853.github.io/liftgrove-support/training-max.html">
+  <meta property="og:image" content="https://knakul853.github.io/liftgrove-support/images/iphone-01-today.png">
+  <link rel="canonical" href="https://knakul853.github.io/liftgrove-support/training-max.html">
+  <title>Free Training Max Calculator for Barbell Lifting · Liftgrove</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="landing.css">
+  <script type="module" src="training-max.mjs"></script>
+</head>
+<body>
+  <main class="page">
+    <header class="masthead">
+      <a class="brand" href="app.html">Liftgrove<span class="brand-dot">.</span></a>
+      <nav aria-label="Main navigation"><a href="app.html">The app</a><a href="./">Support</a><a href="privacy.html">Privacy</a></nav>
+    </header>
+
+    <section class="tool-intro" aria-labelledby="tool-title">
+      <p class="eyebrow">FREE BARBELL TRAINING MAX CALCULATOR</p>
+      <h1 id="tool-title">Find your training max.</h1>
+      <p>Use a recent set to estimate your one-rep max and choose a starting weight for your next block. Know your one-rep max? Enter it with one rep.</p>
+    </section>
+
+    <section class="calculator-panel" aria-label="Training max calculator">
+      <div class="calculator-fields">
+        <div class="field"><label for="weight">Weight lifted</label><input id="weight" type="number" inputmode="decimal" min="0.1" step="any" placeholder="e.g. 100"></div>
+        <div class="field"><label for="reps">Reps completed</label><input id="reps" type="number" inputmode="numeric" min="1" max="30" step="1" value="5"></div>
+        <div class="field"><label for="unit">Unit</label><select id="unit"><option value="kg">kg</option><option value="lb">lb</option></select></div>
+        <div class="field"><label for="ratio">Training max</label><select id="ratio"><option value="0.9">90% of estimated max</option><option value="0.85">85% of estimated max</option></select></div>
+        <div class="field"><label for="increment">Round to the nearest</label><input id="increment" type="number" inputmode="decimal" min="0.1" step="any" value="2.5"><span class="field-hint">Use an increment you can load with your plates.</span></div>
+      </div>
+      <div class="calculator-result" aria-live="polite" aria-atomic="true">
+        <p class="eyebrow">YOUR STARTING POINT</p>
+        <p id="result-prompt">Enter the weight from your set to see your numbers.</p>
+        <div id="result-values" hidden>
+          <p class="result-label">Training max</p>
+          <p class="result-number"><output id="training-max">—</output> <span id="result-unit">kg</span></p>
+          <p class="result-detail">Estimated one-rep max: <output id="estimated-max">—</output> <span id="estimate-unit">kg</span></p>
+        </div>
+        <p id="result-error" class="result-error" hidden></p>
+      </div>
+    </section>
+
+    <section class="plate-examples" aria-labelledby="method-title">
+      <p class="eyebrow">HOW THIS CALCULATOR WORKS</p>
+      <h2 id="method-title">A simple estimate, then room to grow.</h2>
+      <p>For a set of two to 30 reps, the estimated one-rep max is the weight lifted × (1 + reps ÷ 30). A one-rep lift uses the weight itself. The training max is 85% or 90% of that estimate, rounded to your chosen increment. This is the same starting calculation Liftgrove uses; inside the app you can also enter a known training max and confirm later changes yourself.</p>
+      <div class="example-grid">
+        <article class="example-card"><h3>100 kg × 5 reps</h3><p>Estimated max: about <strong>116.7 kg</strong>.</p><p>At 90%, rounded to 2.5 kg: <strong>105 kg training max</strong>.</p></article>
+        <article class="example-card"><h3>225 lb × 3 reps</h3><p>Estimated max: <strong>247.5 lb</strong>.</p><p>At 90%, rounded to 5 lb: <strong>225 lb training max</strong>.</p></article>
+      </div>
+      <p>Rep-based maxes are estimates. Use the number as a planning starting point and adjust it to your training, rather than treating it as a promise of what you can lift.</p>
+    </section>
+
+    <section class="closing-cta" aria-labelledby="closing-title">
+      <p class="eyebrow">TAKE THE PLAN TO THE GYM</p>
+      <h2 id="closing-title">From training max to your next set.</h2>
+      <p>Liftgrove turns your confirmed maxes into a barbell plan, shows the plates for each side, and saves every set as you go. Planning, logging, and backups are free on iPhone and iPad.</p>
+      <a class="button" href="https://apps.apple.com/app/apple-store/id6821814920?pt=129577916&amp;ct=liftgrove-web-tm-01&amp;mt=8">Get Liftgrove free <span aria-hidden="true">↗</span></a>
+    </section>
+
+    <footer><span>© 2026 Liftgrove</span><a href="app.html">The app</a><a href="./">Support</a><a href="privacy.html">Privacy Policy</a></footer>
+  </main>
+</body>
+</html>
