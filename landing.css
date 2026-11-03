@@ -1,0 +1,60 @@
+html { scroll-behavior: smooth; }
+.masthead { position: relative; z-index: 1; }
+.landing-hero { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(290px, .85fr); align-items: center; gap: clamp(32px, 6vw, 88px); padding: 72px 0 100px; }
+.landing-copy h1, .feature-section h2, .closing-cta h2 { font-family: Georgia, serif; letter-spacing: -.05em; }
+.landing-copy h1 { font-size: clamp(48px, 6vw, 76px); line-height: 1.06; margin: 18px 0 26px; max-width: 700px; }
+.landing-copy > p:not(.eyebrow, .small-print) { font-size: 19px; line-height: 1.65; max-width: 550px; }
+.landing-copy .button { margin-top: 22px; }
+.small-print { color: #667b69; font-size: 13px; margin-top: 18px; }
+.hero-phone { display: flex; align-items: flex-start; justify-content: center; overflow: hidden; height: 620px; padding: 48px 30px 0; border-radius: 36px; background: radial-gradient(circle at 76% 15%, #dce4d7 0, #c2d2c1 42%, #a6bca7 100%); }
+.hero-phone img { display: block; width: min(100%, 300px); height: auto; border: 8px solid #1a2b20; border-radius: 42px; box-shadow: 0 30px 70px #1d342a3b; }
+.feature-section { border-top: 1px solid #d9dfd2; padding: 82px 0 94px; }
+.feature-section h2, .closing-cta h2 { font-size: clamp(38px, 5vw, 58px); line-height: 1.12; margin: 14px 0 32px; }
+.feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.feature-card { padding: 26px 0 30px; border-top: 2px solid #355a43; }
+.feature-number { color: #aa8150; font-size: 13px; font-weight: 700; letter-spacing: .15em; }
+.feature-card h3 { font: 700 24px/1.2 Georgia, serif; margin: 18px 0 12px; }
+.feature-card p { line-height: 1.65; max-width: 300px; margin: 0; }
+.screen-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; margin-top: 52px; }
+.screen-pair figure { margin: 0; padding: 36px 28px 22px; border-radius: 30px; background: #e8e9de; text-align: center; overflow: hidden; }
+.screen-pair figure:nth-child(2) { background: #dce7db; }
+.screen-pair img { display: block; width: min(100%, 260px); height: auto; margin: 0 auto; border: 6px solid #1a2b20; border-radius: 34px; box-shadow: 0 18px 36px #1d342a25; }
+.screen-pair figcaption { font: 700 21px Georgia, serif; margin-top: 24px; }
+.closing-cta { padding: 66px clamp(26px, 7vw, 82px) 72px; border-radius: 36px; color: #f5f3e9; background: #294c39; }
+.closing-cta .eyebrow { color: #bad3b8; }
+.closing-cta h2 { margin-bottom: 20px; }
+.closing-cta p:not(.eyebrow) { font-size: 18px; line-height: 1.6; max-width: 650px; }
+.closing-cta .button { background: #f3f1e7; color: #294c39; }
+.closing-cta .button:hover { background: #dfe6d7; }
+a:focus-visible { outline: 3px solid #aa8150; outline-offset: 4px; }
+@media (max-width: 760px) {
+  .landing-hero { grid-template-columns: 1fr; gap: 40px; padding: 58px 0 76px; }
+  .landing-copy h1 { font-size: clamp(46px, 11vw, 66px); }
+  .landing-copy > p:not(.eyebrow, .small-print) { font-size: 17px; }
+  .hero-phone { height: 450px; padding-top: 36px; }
+  .hero-phone img { width: min(70%, 260px); }
+  .feature-section { padding: 66px 0 76px; }
+  .feature-grid { grid-template-columns: 1fr; gap: 0; }
+  .feature-card { padding: 22px 0; }
+  .feature-card p { max-width: 520px; }
+  .screen-pair { gap: 14px; margin-top: 32px; }
+  .screen-pair figure { padding: 18px 10px 16px; border-radius: 22px; }
+  .screen-pair img { border-width: 4px; border-radius: 24px; }
+  .screen-pair figcaption { font-size: 15px; }
+}
+@media (max-width: 480px) {
+  .masthead nav { gap: 12px; font-size: 13px; }
+  .hero-phone { height: 390px; }
+  .screen-pair { grid-template-columns: 1fr; }
+  .screen-pair img { max-height: 400px; width: auto; max-width: 100%; }
+}
+@media (prefers-color-scheme: dark) {
+  .small-print { color: #adbdad; }
+  .hero-phone { background: radial-gradient(circle at 76% 15%, #3f654d 0, #2c4c39 50%, #1b3426 100%); }
+  .feature-section { border-color: #33453a; }
+  .feature-card { border-color: #80b597; }
+  .screen-pair figure { background: #263c2d; }
+  .screen-pair figure:nth-child(2) { background: #324535; }
+  .closing-cta { background: #213b2d; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
