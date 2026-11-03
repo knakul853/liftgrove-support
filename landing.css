@@ -27,6 +27,13 @@ html { scroll-behavior: smooth; }
 .example-card p { line-height: 1.6; }
 .example-card .plate-stack { font-size: 20px; font-weight: 700; margin-bottom: 0; }
 .plate-stack span { display: block; color: #667b69; font-size: 14px; font-weight: 500; }
+.table-hint { display: none; }
+.schedule-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 34px 0 24px; border-radius: 20px; border: 1px solid #d9dfd2; }
+.schedule-table { width: 100%; min-width: 620px; border-collapse: collapse; text-align: left; }
+.schedule-table caption { padding: 18px 22px; background: #e8e9de; font-weight: 700; text-align: left; }
+.schedule-table th, .schedule-table td { padding: 16px 22px; border-top: 1px solid #d9dfd2; }
+.schedule-table thead th { color: #45674e; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; }
+.schedule-table tbody th { width: 110px; font-variant-numeric: tabular-nums; }
 .tool-intro { max-width: 780px; padding: 78px 0 42px; }
 .tool-intro h1 { font: 700 clamp(46px, 6vw, 72px)/1.08 Georgia, serif; letter-spacing: -.05em; margin: 18px 0 24px; }
 .tool-intro > p:not(.eyebrow) { font-size: 19px; line-height: 1.65; max-width: 700px; }
@@ -57,6 +64,7 @@ html { scroll-behavior: smooth; }
 .closing-cta .button:hover { background: #dfe6d7; }
 a:focus-visible { outline: 3px solid #aa8150; outline-offset: 4px; }
 @media (max-width: 760px) {
+  .table-hint { display: block; margin-bottom: -14px; color: #667b69; font-size: 14px !important; }
   .landing-hero { grid-template-columns: 1fr; gap: 40px; padding: 58px 0 76px; }
   .landing-copy h1 { font-size: clamp(46px, 11vw, 66px); }
   .landing-copy > p:not(.eyebrow, .small-print) { font-size: 17px; }
@@ -100,6 +108,10 @@ a:focus-visible { outline: 3px solid #aa8150; outline-offset: 4px; }
   .field input, .field select { background: #17261c; color: #f5f3e9; border-color: #66806c; }
   .field-hint { color: #adbdad; }
   .plate-stack span { color: #adbdad; }
+  .table-hint { color: #adbdad; }
+  .schedule-table-wrap, .schedule-table th, .schedule-table td { border-color: #33453a; }
+  .schedule-table caption { background: #263c2d; }
+  .schedule-table thead th { color: #adbdad; }
   .feature-card { border-color: #80b597; }
   .screen-pair figure { background: #263c2d; }
   .screen-pair figure:nth-child(2) { background: #324535; }
