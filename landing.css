@@ -168,7 +168,7 @@ a:focus-visible { outline: 3px solid #aa8150; outline-offset: 4px; }
 @media print {
   :root { background: #fff; color: #202920; }
   .workout-log-page { background: #fff; color: #202920; }
-  .workout-log-page .masthead, .workout-log-page .landing-hero, .workout-log-page .feature-section, .workout-log-page .closing-cta, .workout-log-page footer, .workout-log-page .printable-log-heading .button { display: none; }
+  .workout-log-page .masthead, .workout-log-page .landing-hero, .workout-log-page .preview-section, .workout-log-page .feature-section, .workout-log-page .closing-cta, .workout-log-page footer, .workout-log-page .printable-log-heading .button { display: none; }
   .workout-log-page .page { max-width: none; padding: 0; }
   .workout-log-page .printable-log { border: 0; padding: 0; }
   .workout-log-page .printable-log-heading { margin-bottom: 16px; }
