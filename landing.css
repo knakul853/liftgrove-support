@@ -37,6 +37,18 @@ html { scroll-behavior: smooth; }
 .tool-intro { max-width: 780px; padding: 78px 0 42px; }
 .tool-intro h1 { font: 700 clamp(46px, 6vw, 72px)/1.08 Georgia, serif; letter-spacing: -.05em; margin: 18px 0 24px; }
 .tool-intro > p:not(.eyebrow) { font-size: 19px; line-height: 1.65; max-width: 700px; }
+.printable-log { border-top: 1px solid #d9dfd2; padding: 82px 0 94px; }
+.printable-log-heading { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 30px; }
+.printable-log-heading h2 { font: 700 clamp(38px, 5vw, 58px)/1.12 Georgia, serif; letter-spacing: -.05em; margin: 14px 0 18px; }
+.printable-log-heading p:not(.eyebrow) { max-width: 620px; font-size: 18px; line-height: 1.65; }
+.printable-log-heading .button { flex: none; border: 0; cursor: pointer; font: inherit; }
+.printable-log-heading .button:focus-visible { outline: 3px solid #aa8150; outline-offset: 4px; }
+.print-sheet { padding: 30px; border: 1px solid #d9dfd2; border-radius: 24px; background: #fff; color: #202920; }
+.print-sheet-header { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+.print-sheet > p { margin: 22px 0; }
+.print-sheet .schedule-table { width: 100%; }
+.workout-log-page .print-sheet .schedule-table caption { background: #e8e9de; color: #202920; }
+.print-sheet .schedule-table td { height: 54px; min-width: 80px; }
 .calculator-panel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, .7fr); gap: 34px; padding: clamp(24px, 5vw, 48px); border-radius: 32px; background: #e8e9de; }
 .calculator-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-content: start; gap: 24px 18px; }
 .calculator-fields .field:last-child { grid-column: 1 / -1; }
@@ -88,6 +100,8 @@ html { scroll-behavior: smooth; }
 .closing-cta .button:hover { background: #dfe6d7; }
 a:focus-visible { outline: 3px solid #aa8150; outline-offset: 4px; }
 @media (max-width: 760px) {
+  .printable-log { padding: 66px 0 76px; }
+  .printable-log-heading { align-items: start; flex-direction: column; }
   .table-hint { display: block; margin-bottom: -14px; color: #667b69; font-size: 14px !important; }
   .landing-hero { grid-template-columns: 1fr; gap: 40px; padding: 58px 0 76px; }
   .landing-copy h1 { font-size: clamp(46px, 11vw, 66px); }
@@ -128,6 +142,7 @@ a:focus-visible { outline: 3px solid #aa8150; outline-offset: 4px; }
   .preview-section { border-color: #33453a; }
   .feature-section { border-color: #33453a; }
   .plate-examples { border-color: #33453a; }
+  .printable-log { border-color: #33453a; }
   .example-card { background: #263c2d; }
   .calculator-panel { background: #263c2d; }
   .calculator-result { background: #213b2d; }
@@ -150,3 +165,19 @@ a:focus-visible { outline: 3px solid #aa8150; outline-offset: 4px; }
   .closing-cta { background: #213b2d; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media print {
+  :root { background: #fff; color: #202920; }
+  .workout-log-page { background: #fff; color: #202920; }
+  .workout-log-page .masthead, .workout-log-page .landing-hero, .workout-log-page .feature-section, .workout-log-page .closing-cta, .workout-log-page footer, .workout-log-page .printable-log-heading .button { display: none; }
+  .workout-log-page .page { max-width: none; padding: 0; }
+  .workout-log-page .printable-log { border: 0; padding: 0; }
+  .workout-log-page .printable-log-heading { margin-bottom: 16px; }
+  .workout-log-page .printable-log-heading h2 { font-size: 28px; margin: 0; }
+  .workout-log-page .printable-log-heading p { display: none; }
+  .workout-log-page .table-hint { display: none; }
+  .workout-log-page .print-sheet { border: 0; padding: 0; }
+  .workout-log-page .schedule-table-wrap { overflow: visible; border-color: #999; }
+  .workout-log-page .schedule-table { min-width: 0; }
+  .workout-log-page .schedule-table th, .workout-log-page .schedule-table td { border-color: #999; }
+  .workout-log-page .schedule-table caption { background: #eee; }
+}
