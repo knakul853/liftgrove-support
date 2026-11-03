@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <meta name="description" content="Free four-week barbell workout calculator. Enter your training max to preview warm-ups, main sets, rep targets, deload, and optional first-set-last work in kg or lb.">
+  <meta name="apple-itunes-app" content="app-id=6821814920">
+  <meta property="og:title" content="Four-Week Barbell Plan Calculator · Liftgrove">
+  <meta property="og:description" content="Preview the weights and reps for your next four-week strength cycle, free in the browser.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://knakul853.github.io/liftgrove-support/cycle-calculator.html">
+  <meta property="og:image" content="https://knakul853.github.io/liftgrove-support/images/iphone-01-today.png">
+  <link rel="canonical" href="https://knakul853.github.io/liftgrove-support/cycle-calculator.html">
+  <title>Free Four-Week Barbell Plan Calculator · Liftgrove</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="landing.css">
+  <script type="module" src="cycle-calculator.mjs"></script>
+</head>
+<body>
+  <main class="page">
+    <header class="masthead">
+      <a class="brand" href="app.html">Liftgrove<span class="brand-dot">.</span></a>
+      <nav aria-label="Main navigation"><a href="app.html">The app</a><a href="./">Support</a><a href="privacy.html">Privacy</a></nav>
+    </header>
+
+    <section class="tool-intro" aria-labelledby="tool-title">
+      <p class="eyebrow">FREE FOUR-WEEK BARBELL PLAN</p>
+      <h1 id="tool-title">See your next four weeks.</h1>
+      <p>Enter one lift's training max to preview its warm-ups, working sets, and deload. Need a starting number? <a href="training-max.html">Calculate your training max first</a>.</p>
+    </section>
+
+    <section class="calculator-panel" aria-label="Four-week workout calculator">
+      <div class="calculator-fields">
+        <div class="field"><label for="training-max">Training max for one lift</label><input id="training-max" type="number" inputmode="decimal" min="0.1" step="any" placeholder="e.g. 100"></div>
+        <div class="field"><label for="unit">Unit</label><select id="unit"><option value="kg">kg</option><option value="lb">lb</option></select></div>
+        <div class="field"><label for="increment">Round to the nearest</label><input id="increment" type="number" inputmode="decimal" min="0.1" step="any" value="2.5"><span class="field-hint">Use a load you can make with your plates.</span></div>
+        <div class="field"><label for="bar-weight">Empty bar weight</label><input id="bar-weight" type="number" inputmode="decimal" min="0" max="500" step="any" value="20"><span class="field-hint">Warm-ups never go below this weight.</span></div>
+        <div class="field"><label for="scheme">Main sets</label><select id="scheme"><option value="classic">Classic · top set for extra reps</option><option value="fivePro">5s Pro · five reps each set</option></select></div>
+        <div class="field cycle-toggle"><label for="fsl"><input id="fsl" type="checkbox"> Add first-set-last, 5 × 5</label><span class="field-hint">Five more sets at the first working weight in weeks 1–3.</span></div>
+      </div>
+      <div class="calculator-result cycle-intro-result" aria-live="polite">
+        <p class="eyebrow">YOUR FIRST CYCLE</p>
+        <p id="cycle-prompt">Enter a training max to see the plan.</p>
+        <p id="cycle-summary" class="cycle-summary" hidden></p>
+        <p id="cycle-error" class="result-error" hidden></p>
+      </div>
+    </section>
+
+    <section class="cycle-output" aria-label="Your four-week plan">
+      <div id="cycle-result" class="cycle-grid" hidden></div>
+    </section>
+
+    <section class="plate-examples" aria-labelledby="method-title">
+      <p class="eyebrow">HOW THE PREVIEW WORKS</p>
+      <h2 id="method-title">The weights, before the workout.</h2>
+      <p>The classic main sets use 65%, 75%, and 85% of your training max in week 1; 70%, 80%, and 90% in week 2; and 75%, 85%, and 95% in week 3. The last working set allows extra reps. Week 4 uses 40%, 50%, and 60% for a lighter deload. Choose 5s Pro to use five reps for every working set without an extra-rep target.</p>
+      <p>Weeks 1–3 also begin with 40% × 5, 50% × 5, and 60% × 3 warm-ups. A warm-up cannot be lighter than your selected bar, and equal warm-up loads appear once. Weights round to your chosen increment. This preview uses the same standard set rules as Liftgrove; the app can also plan your four lifts, account for your actual plates, log sets, and carry training-max decisions into the next cycle.</p>
+      <p>This is a planning estimate, not a claim about what you can safely lift. Choose a training max that fits your current ability.</p>
+    </section>
+
+    <section class="closing-cta" aria-labelledby="closing-title">
+      <p class="eyebrow">BRING THE PLAN WITH YOU</p>
+      <h2 id="closing-title">From first set to next cycle.</h2>
+      <p>Liftgrove turns your maxes into a full barbell schedule, shows the plates to load, and saves each set as you train. Planning, logging, and backups are free on iPhone and iPad.</p>
+      <a class="button" href="https://apps.apple.com/app/apple-store/id6821814920?pt=129577916&amp;ct=liftgrove-web-cycle-01&amp;mt=8">Get Liftgrove free <span aria-hidden="true">↗</span></a>
+    </section>
+
+    <footer><span>© 2026 Liftgrove</span><a href="app.html">The app</a><a href="./">Support</a><a href="privacy.html">Privacy Policy</a></footer>
+  </main>
+</body>
+</html>
