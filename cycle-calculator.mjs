@@ -45,6 +45,7 @@ if (maxInput) {
   const error = document.querySelector('#cycle-error');
   const result = document.querySelector('#cycle-result');
   const summary = document.querySelector('#cycle-summary');
+  const printActions = document.querySelector('#cycle-print-actions');
   const format = value => new Intl.NumberFormat('en', { maximumFractionDigits: 2 }).format(value);
   const unit = () => unitInput.value;
 
@@ -56,6 +57,7 @@ if (maxInput) {
     error.hidden = empty || !!weeks;
     summary.hidden = !weeks;
     result.hidden = !weeks;
+    printActions.hidden = !weeks;
     if (!weeks) {
       if (!empty) error.textContent = 'Enter a positive training max and increment, plus a bar weight from 0 to 500.';
       return;
@@ -99,6 +101,7 @@ if (maxInput) {
 
   for (const input of [maxInput, incrementInput, barInput]) input.addEventListener('input', update);
   for (const input of [schemeInput, fslInput]) input.addEventListener('change', update);
+  document.querySelector('#print-cycle').addEventListener('click', () => window.print());
   unitInput.addEventListener('change', () => {
     const toLb = unit() === 'lb';
     if (maxInput.value.trim() !== '') {

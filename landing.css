@@ -73,6 +73,11 @@ html { scroll-behavior: smooth; }
 .cycle-intro-result { min-height: 220px; }
 .cycle-summary { font: 700 clamp(29px, 3vw, 42px)/1.2 Georgia, serif; letter-spacing: -.03em; }
 .cycle-output { padding: 34px 0 56px; }
+.cycle-print-actions { display: flex; justify-content: flex-end; margin-bottom: 20px; }
+.cycle-print-actions[hidden] { display: none; }
+.cycle-print-actions .button { border: 0; cursor: pointer; font: inherit; }
+.cycle-print-actions .button:focus-visible { outline: 3px solid #aa8150; outline-offset: 4px; }
+.cycle-print-credit { display: none; }
 .cycle-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 .cycle-grid[hidden] { display: none; }
 .cycle-week { padding: clamp(22px, 3vw, 32px); border: 1px solid #d9dfd2; border-radius: 26px; background: #f4f4ec; }
@@ -166,7 +171,27 @@ a:focus-visible { outline: 3px solid #aa8150; outline-offset: 4px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media print {
+  @page { size: A4; margin: 12mm; }
   :root { background: #fff; color: #202920; }
+  .cycle-calculator-page { background: #fff; color: #202920; }
+  .cycle-calculator-page .page { max-width: none; padding: 0; }
+  .cycle-calculator-page .masthead, .cycle-calculator-page .calculator-fields, .cycle-calculator-page .cycle-print-actions, .cycle-calculator-page .plate-examples, .cycle-calculator-page .closing-cta, .cycle-calculator-page footer, .cycle-calculator-page .tool-intro > p { display: none; }
+  .cycle-calculator-page .tool-intro { max-width: none; padding: 0 0 8mm; }
+  .cycle-calculator-page .tool-intro h1 { margin: 0; font-size: 28px; }
+  .cycle-calculator-page .calculator-panel { display: block; padding: 0; background: none; }
+  .cycle-calculator-page .calculator-result { min-height: 0; padding: 0; color: #202920; background: none; }
+  .cycle-calculator-page .calculator-result .eyebrow { display: none; }
+  .cycle-calculator-page .cycle-summary { margin: 0; font-size: 18px; }
+  .cycle-calculator-page .cycle-output { padding: 7mm 0 0; }
+  .cycle-calculator-page .cycle-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5mm; }
+  .cycle-calculator-page .cycle-week { break-inside: avoid; padding: 5mm; border-radius: 12px; background: #fff; }
+  .cycle-calculator-page .cycle-week h3 { font-size: 20px; }
+  .cycle-calculator-page .cycle-warmups { min-height: 0; font-size: 11px; color: #45674e; }
+  .cycle-calculator-page .cycle-sets li { padding: 6px 0; }
+  .cycle-calculator-page .cycle-sets strong { font-size: 16px; }
+  .cycle-calculator-page .cycle-sets span { font-size: 11px; color: #45674e; }
+  .cycle-calculator-page .cycle-extra { padding-top: 8px; margin-top: 8px; font-size: 11px; }
+  .cycle-calculator-page .cycle-print-credit { display: block; margin: 7mm 0 0; font-size: 11px; color: #45674e; }
   .workout-log-page { background: #fff; color: #202920; }
   .workout-log-page .masthead, .workout-log-page .landing-hero, .workout-log-page .preview-section, .workout-log-page .feature-section, .workout-log-page .closing-cta, .workout-log-page footer, .workout-log-page .printable-log-heading .button { display: none; }
   .workout-log-page .page { max-width: none; padding: 0; }

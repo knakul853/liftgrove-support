@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="favicon.png" type="image/png">
-  <meta name="description" content="Free four-week barbell workout calculator. Enter your training max to preview warm-ups, main sets, rep targets, deload, and optional first-set-last work in kg or lb.">
+  <meta name="description" content="Free four-week barbell workout calculator. Enter your training max to preview and print warm-ups, main sets, deload, and optional first-set-last work in kg or lb.">
   <meta name="apple-itunes-app" content="app-id=6821814920">
   <meta property="og:title" content="Four-Week Barbell Plan Calculator · Liftgrove">
   <meta property="og:description" content="Preview the weights and reps for your next four-week strength cycle, free in the browser.">
@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="landing.css">
   <script type="module" src="cycle-calculator.mjs"></script>
 </head>
-<body>
+<body class="cycle-calculator-page">
   <main class="page">
     <header class="masthead">
       <a class="brand" href="app.html">Liftgrove<span class="brand-dot">.</span></a>
@@ -27,7 +27,7 @@
     <section class="tool-intro" aria-labelledby="tool-title">
       <p class="eyebrow">FREE FOUR-WEEK BARBELL PLAN</p>
       <h1 id="tool-title">See your next four weeks.</h1>
-      <p>Enter one lift's training max to preview its warm-ups, working sets, and deload. Need a starting number? <a href="training-max.html">Calculate your training max first</a>.</p>
+      <p>Enter one lift's training max to preview and print its warm-ups, working sets, and deload. Need a starting number? <a href="training-max.html">Calculate your training max first</a>.</p>
     </section>
 
     <section class="calculator-panel" aria-label="Four-week workout calculator">
@@ -48,7 +48,11 @@
     </section>
 
     <section class="cycle-output" aria-label="Your four-week plan">
+      <div id="cycle-print-actions" class="cycle-print-actions" hidden>
+        <button class="button" id="print-cycle" type="button">Print this plan <span aria-hidden="true">↗</span></button>
+      </div>
       <div id="cycle-result" class="cycle-grid" hidden></div>
+      <p class="cycle-print-credit">Made with Liftgrove · Plan and log your lifts on iPhone and iPad.</p>
     </section>
 
     <section class="plate-examples" aria-labelledby="method-title">
