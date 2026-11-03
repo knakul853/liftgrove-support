@@ -8,6 +8,10 @@ html { scroll-behavior: smooth; }
 .small-print { color: #667b69; font-size: 13px; margin-top: 18px; }
 .hero-phone { display: flex; align-items: flex-start; justify-content: center; overflow: hidden; height: 620px; padding: 48px 30px 0; border-radius: 36px; background: radial-gradient(circle at 76% 15%, #dce4d7 0, #c2d2c1 42%, #a6bca7 100%); }
 .hero-phone img { display: block; width: min(100%, 300px); height: auto; border: 8px solid #1a2b20; border-radius: 42px; box-shadow: 0 30px 70px #1d342a3b; }
+.preview-section { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 320px); align-items: center; gap: clamp(32px, 6vw, 88px); border-top: 1px solid #d9dfd2; padding: 82px 0 94px; }
+.preview-section h2 { font: 700 clamp(38px, 5vw, 58px)/1.12 Georgia, serif; letter-spacing: -.05em; margin: 14px 0 24px; }
+.preview-section p:not(.eyebrow) { font-size: 18px; line-height: 1.65; max-width: 550px; }
+.preview-section video { display: block; width: 100%; height: auto; border: 8px solid #1a2b20; border-radius: 36px; background: #1a2b20; box-shadow: 0 18px 42px #1d342a25; }
 .feature-section { border-top: 1px solid #d9dfd2; padding: 82px 0 94px; }
 .feature-section h2, .plate-examples h2, .closing-cta h2 { font-size: clamp(38px, 5vw, 58px); line-height: 1.12; margin: 14px 0 32px; }
 .feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
@@ -41,6 +45,9 @@ a:focus-visible { outline: 3px solid #aa8150; outline-offset: 4px; }
   .landing-copy > p:not(.eyebrow, .small-print) { font-size: 17px; }
   .hero-phone { height: 450px; padding-top: 36px; }
   .hero-phone img { width: min(70%, 260px); }
+  .preview-section { grid-template-columns: 1fr; justify-items: center; padding: 66px 0 76px; }
+  .preview-section > div { justify-self: stretch; }
+  .preview-section video { width: min(100%, 300px); }
   .feature-section { padding: 66px 0 76px; }
   .plate-examples { padding: 66px 0 76px; }
   .feature-grid { grid-template-columns: 1fr; gap: 0; }
@@ -61,6 +68,7 @@ a:focus-visible { outline: 3px solid #aa8150; outline-offset: 4px; }
 @media (prefers-color-scheme: dark) {
   .small-print { color: #adbdad; }
   .hero-phone { background: radial-gradient(circle at 76% 15%, #3f654d 0, #2c4c39 50%, #1b3426 100%); }
+  .preview-section { border-color: #33453a; }
   .feature-section { border-color: #33453a; }
   .plate-examples { border-color: #33453a; }
   .example-card { background: #263c2d; }
