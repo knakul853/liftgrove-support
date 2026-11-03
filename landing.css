@@ -44,6 +44,14 @@ html { scroll-behavior: smooth; }
 .field input, .field select { width: 100%; min-height: 54px; padding: 12px 14px; border: 1px solid #b7c3b6; border-radius: 14px; background: #fff; color: #23372a; font: inherit; font-size: 17px; }
 .field input:focus-visible, .field select:focus-visible { outline: 3px solid #aa8150; outline-offset: 2px; }
 .field-hint { display: block; color: #667b69; font-size: 13px; line-height: 1.5; margin-top: 8px; }
+.inventory-details { grid-column: 1 / -1; border-top: 1px solid #b7c3b6; padding-top: 16px; }
+.inventory-details summary { cursor: pointer; font-weight: 700; }
+.inventory-details p { color: #667b69; font-size: 14px; line-height: 1.5; }
+.inventory-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.inventory-field { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 14px; }
+.inventory-field input { width: 72px; min-height: 44px; padding: 8px; border: 1px solid #b7c3b6; border-radius: 12px; background: #fff; color: #23372a; font: inherit; }
+.inventory-field input:focus-visible { outline: 3px solid #aa8150; outline-offset: 2px; }
+.plate-result-stack { font-size: 20px; font-weight: 700; line-height: 1.5; }
 .calculator-result { align-self: stretch; display: flex; flex-direction: column; justify-content: center; min-height: 260px; padding: clamp(24px, 4vw, 40px); border-radius: 26px; background: #294c39; color: #f5f3e9; }
 .calculator-result .eyebrow { color: #bad3b8; }
 .calculator-result > p:not(.eyebrow), .result-detail { line-height: 1.55; }
@@ -94,6 +102,7 @@ a:focus-visible { outline: 3px solid #aa8150; outline-offset: 4px; }
   .screen-pair { grid-template-columns: 1fr; }
   .calculator-fields { grid-template-columns: 1fr; }
   .calculator-fields .field:last-child { grid-column: auto; }
+  .inventory-grid { grid-template-columns: 1fr; }
   .screen-pair img { max-height: 400px; width: auto; max-width: 100%; }
 }
 @media (prefers-color-scheme: dark) {
@@ -107,6 +116,9 @@ a:focus-visible { outline: 3px solid #aa8150; outline-offset: 4px; }
   .calculator-result { background: #213b2d; }
   .field input, .field select { background: #17261c; color: #f5f3e9; border-color: #66806c; }
   .field-hint { color: #adbdad; }
+  .inventory-details { border-color: #66806c; }
+  .inventory-details p { color: #adbdad; }
+  .inventory-field input { background: #17261c; color: #f5f3e9; border-color: #66806c; }
   .plate-stack span { color: #adbdad; }
   .table-hint { color: #adbdad; }
   .schedule-table-wrap, .schedule-table th, .schedule-table td { border-color: #33453a; }

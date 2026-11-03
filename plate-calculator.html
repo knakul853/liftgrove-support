@@ -4,17 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="favicon.png" type="image/png">
-  <meta name="description" content="See how Liftgrove's free barbell plate calculator shows the plates for each side of your bar using the equipment you have. Available on iPhone and iPad.">
+  <meta name="description" content="Free online barbell plate calculator. Enter target and bar weight, choose kg or lb and the plate pairs you own, then see each side and the closest load at or below your target.">
   <meta name="apple-itunes-app" content="app-id=6821814920">
   <meta property="og:title" content="Barbell Plate Calculator · Liftgrove">
-  <meta property="og:description" content="Choose your bar and available plates. Liftgrove shows what to load on each side.">
+  <meta property="og:description" content="Enter your bar, target, and available plate pairs. See what to load on each side, free in your browser.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://knakul853.github.io/liftgrove-support/plate-calculator.html">
   <meta property="og:image" content="https://knakul853.github.io/liftgrove-support/images/iphone-03-plates.png">
   <link rel="canonical" href="https://knakul853.github.io/liftgrove-support/plate-calculator.html">
-  <title>Free Barbell Plate Calculator for iPhone &amp; iPad · Liftgrove</title>
+  <title>Free Barbell Plate Calculator Online (kg &amp; lb) · Liftgrove</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="landing.css">
+  <script type="module" src="plate-calculator.mjs"></script>
 </head>
 <body>
   <main class="page">
@@ -27,12 +28,36 @@
       <div class="landing-copy">
         <p class="eyebrow">FREE BARBELL PLATE CALCULATOR</p>
         <h1 id="hero-title">Know what goes on the bar.</h1>
-        <p>Enter the weight you want to lift. Liftgrove works out the plates for each side using your bar and the plates you have, so you can spend less time counting between sets.</p>
+        <p>Enter the weight you want to lift and the plate pairs you have. See what goes on each side of the bar before your next set.</p>
         <a class="button" href="https://apps.apple.com/app/apple-store/id6821814920?pt=129577916&amp;ct=liftgrove-web-plates-01&amp;mt=8">Get Liftgrove free <span aria-hidden="true">↗</span></a>
-        <p class="small-print">Plate calculator included free on iPhone and iPad.</p>
+        <p class="small-print">Works in your browser. Also included free on iPhone and iPad.</p>
       </div>
       <div class="hero-phone">
         <img src="images/iphone-03-plates.png" width="1206" height="2622" alt="Liftgrove plate calculator showing the plates needed on each side of the bar for a 57.5 kilogram target">
+      </div>
+    </section>
+
+    <section class="calculator-panel" aria-label="Free plate calculator">
+      <div class="calculator-fields">
+        <div class="field"><label for="target-weight">Target weight</label><input id="target-weight" type="number" inputmode="decimal" min="0" max="1000" step="any" placeholder="e.g. 57.5"></div>
+        <div class="field"><label for="bar-weight">Bar weight</label><input id="bar-weight" type="number" inputmode="decimal" min="0" max="1000" step="any" value="20"></div>
+        <div class="field"><label for="plate-unit">Unit</label><select id="plate-unit"><option value="kg">kg</option><option value="lb">lb</option></select></div>
+        <details class="inventory-details">
+          <summary>Plate pairs available</summary>
+          <p>Count matching pairs, one plate for each side. Switching units loads a standard preset.</p>
+          <div id="plate-inventory" class="inventory-grid"></div>
+        </details>
+      </div>
+      <div class="calculator-result" aria-live="polite" aria-atomic="true">
+        <p class="eyebrow">LOAD EACH SIDE</p>
+        <p id="plate-result-prompt">Enter a target weight to see your plates.</p>
+        <div id="plate-result-values" hidden>
+          <p class="result-label">Achievable load</p>
+          <p class="result-number"><output id="plate-result-load">—</output> <span id="plate-result-unit">kg</span></p>
+          <p id="plate-result-stack" class="plate-result-stack"></p>
+          <p id="plate-result-gap" class="result-detail"></p>
+        </div>
+        <p id="plate-result-error" class="result-error" hidden></p>
       </div>
     </section>
 
@@ -62,7 +87,7 @@
           <p class="plate-stack">45 lb + 45 lb <span>per side</span></p>
         </article>
       </div>
-      <p>Available plates vary by gym. Liftgrove uses your bar and plate inventory, and shows a nearby load when the exact target cannot be made.</p>
+      <p>Available plates vary by gym. This calculator uses the pairs you enter and chooses the closest load at or below your target. Liftgrove keeps your bar and plate setup ready for every workout.</p>
     </section>
 
     <section class="closing-cta" aria-labelledby="closing-title">
