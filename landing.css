@@ -106,6 +106,8 @@ html { scroll-behavior: smooth; }
 .closing-cta p:not(.eyebrow) { font-size: 18px; line-height: 1.6; max-width: 650px; }
 .closing-cta .button { background: #f3f1e7; color: #294c39; }
 .closing-cta .button:hover { background: #dfe6d7; }
+.closing-cta p.feedback-invite { margin: 24px 0 0; color: #cbdacb; font-size: 14px; }
+.closing-cta .feedback-invite a { color: #f3f1e7; text-underline-offset: 3px; }
 a:focus-visible { outline: 3px solid #aa8150; outline-offset: 4px; }
 @media (max-width: 760px) {
   .printable-log { padding: 66px 0 76px; }
